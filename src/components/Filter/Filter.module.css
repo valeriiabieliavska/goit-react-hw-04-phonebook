@@ -1,0 +1,12 @@
+.filter {
+  font-size: large;
+margin-top: 40px;
+  padding: 20px;
+}
+
+.filterInput {
+  width: 160px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 20px;
+}

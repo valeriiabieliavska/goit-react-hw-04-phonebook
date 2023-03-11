@@ -1,0 +1,26 @@
+.contactsForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.inputName {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: large;
+}
+
+.input {
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn {
+    width: 140px;
+    padding: 10px;
+    margin-left: 40px;
+    border-radius: 20px;
+}
