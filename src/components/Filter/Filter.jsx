@@ -1,21 +1,31 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import css from './Filter.module.css';
 
-const Filter = ({ value, setFilter }) => (
-  <label className={css.filter}>
-    Filter contacts by name
-    <input
-      className={css.filterInput}
-      value={value}
-      onChange={setFilter}
-      type="text"
-    />
-  </label>
-);
+const Filter = ({ setFilter }) => {
+const [value, setValue] = useState('');
 
-export default Filter;
+const handleChange = (event) => {
+setValue(event.target.value);
+setFilter(event.target.value);
+};
+
+return (
+<label className={css.filter}>
+Filter contacts by name
+<input
+     className={css.filterInput}
+     value={value}
+     onChange={handleChange}
+     type="text"
+   />
+</label>
+);
+};
+
 
 Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  setFilter: PropTypes.func.isRequired,
+setFilter: PropTypes.func.isRequired,
 };
+
+export default Filter;
