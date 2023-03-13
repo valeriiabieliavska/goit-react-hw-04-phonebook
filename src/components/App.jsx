@@ -14,13 +14,7 @@ const INITIAL_CONTACTS = [
 ];
 
 export const App = () => {
-  const [contacts, setContacts] = useState(() => {
-  //   const contacts = localStorage.getItem('contacts');
-  const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
-  if (parsedContacts) {
-    setContacts(parsedContacts);
-  }
-  }, [INITIAL_CONTACTS]);
+  const [contacts, setContacts] = useState(() => JSON.parse(localStorage.getItem('contacts')) || INITIAL_CONTACTS);
   
   const [filter, setFilter] = useState('');
 
@@ -52,19 +46,7 @@ export const App = () => {
       );
     }
 
-  // useEffect(() => {
-  //   const contacts = localStorage.getItem('contacts');
-  //   const parsedContacts = JSON.parse(contacts);
-
-  //   if (parsedContacts) {
-  //     setContacts(parsedContacts);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
-
+ 
   const filteredContacts = getFilteredContacts();
 
   return (
