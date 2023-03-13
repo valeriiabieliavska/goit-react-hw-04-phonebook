@@ -15,15 +15,16 @@ const INITIAL_CONTACTS = [
 
 export const App = () => {
   const [contacts, setContacts] = useState(() => {
+  //   const contacts = localStorage.getItem('contacts');
   const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
   if (parsedContacts) {
     setContacts(parsedContacts);
   }
-}, [INITIAL_CONTACTS]);
+  }, [INITIAL_CONTACTS]);
+  
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    const contacts = localStorage.getItem('contacts');
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
