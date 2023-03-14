@@ -30,7 +30,7 @@ export const App = () => {
     }
 
   const handleFilter = event => {
-    setFilter(event.currentTarget.value);
+    setFilter(event.value);
   };
 
   const getFilteredContacts = () => {
