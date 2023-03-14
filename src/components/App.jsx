@@ -29,8 +29,8 @@ export const App = () => {
         : setContacts(prevContacts => [contact, ...prevContacts]);
     }
 
-  const handleFilter = event => {
-    setFilter(event.value);
+  const handleFilter = value => {
+    setFilter(value);
   };
 
   const getFilteredContacts = () => {
